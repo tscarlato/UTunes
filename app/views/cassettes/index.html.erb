@@ -1,0 +1,23 @@
+<h1>Listing Albums</h1>
+ 
+<%= link_to 'New Album', new_cassette_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Artist</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @cassettes.each do |cassette| %>
+    <tr>
+      <td><%= cassette.title %></td>
+      <td><%= cassette.artist %></td>
+      <td><%= link_to 'Show', cassette_path(cassette) %></td>
+      <td><%= link_to 'Edit', edit_cassette_path(cassette) %></td>
+      <td><%= link_to 'Delete', cassette_path(cassette),
+      method: :delete,
+      data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

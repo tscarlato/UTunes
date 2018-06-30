@@ -1,0 +1,16 @@
+
+<p>
+<strong>Song Title:</strong>
+<%= song.name %>
+</p>
+
+<p>
+<strong>Duration:</strong>
+<%= song.duration %>
+</p>
+
+<p>
+  <%= link_to 'Delete Song', [song.cassette, song],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

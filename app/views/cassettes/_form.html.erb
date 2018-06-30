@@ -1,0 +1,32 @@
+
+<%= form_with model: @cassette, local: true do |form| %>
+ 
+    <% if @cassette.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@cassette.errors.count, "error") %> prohibited
+          this album from being saved:
+        </h2>
+        <ul>
+          <% @cassette.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+   
+    <p>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </p>
+   
+    <p>
+      <%= form.label :artist %>
+      <%= form.text_field :artist %>
+    </p>
+   
+    <p>
+      <%= form.submit("Save Album") %>
+    </p>
+   
+  <% end %>

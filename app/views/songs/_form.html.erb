@@ -1,0 +1,14 @@
+
+<%= form_with(model: [ @cassette, @cassette.songs.build ], local: true) do |form| %>
+    <p>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </p>
+    <p>
+      <%= form.label :duration %><br>
+      <%= form.text_field :duration %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>

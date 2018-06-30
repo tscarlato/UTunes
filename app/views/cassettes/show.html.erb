@@ -1,0 +1,19 @@
+<p>
+  <strong>Title:</strong>
+  <%= @cassette.title %>
+</p>
+ 
+<p>
+  <strong>Artist:</strong>
+  <%= @cassette.artist %>
+</p>
+
+
+<h2>Song List</h2>
+<%= render @cassette.songs %>
+
+<h2>Add a song:</h2>
+<%= render 'songs/form' %>
+
+<%= link_to 'Edit', edit_cassette_path(@cassette) %> |
+<%= link_to 'Back', cassettes_path %>
